@@ -37,7 +37,7 @@ class wkjAPI {
 		$parameters=array(
 			'access_key' => $access_key,
 			'method'     => 'upTrade',
-			'market'     => 'wkb_cny',
+			'market'     => 'wkb_bitcny',
 			'price'      => $Price,
 			'num'        => $Amount,
 			'type'       => $type
@@ -52,7 +52,7 @@ class wkjAPI {
 		$parameters=array(
 			'access_key' => $access_key,
 			'method'     => 'Cancel',
-			'market'     => 'wkb_cny',
+			'market'     => 'wkb_bitcny',
 			'trade_num'  => $OrderID
 		);
 		$url='www.wkj.link/order/Cancel';
@@ -65,7 +65,7 @@ class wkjAPI {
 		$parameters = array(
 			'access_key' => $access_key,
 			'method'     => 'upOrder',
-			'market'     => 'wkb_cny',
+			'market'     => 'wkb_bitcny',
 			'price'      => $Price,
 			'num'        => $Amount,
 			'type'       => $type
