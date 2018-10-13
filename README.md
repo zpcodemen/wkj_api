@@ -24,7 +24,7 @@
      
      (1)	委托交易api:
              url: www.wkj.link/order/upTrade
-           参数说明：
+      参数说明：
             参数名	描述
             access_key	Access_key
             method	当前方法名称(upTrade)
