@@ -21,18 +21,18 @@ class wkjAPI {
 		$tResult=json_decode ($tResult,true);
 		return $tResult;
 	}
-    
+    //加密参数数组。返回加密字符串。
 	function createSign($pParams = array()){    
-		$tPreSign = http_build_query($pParams, '', '&');
+		$tPreSign  = http_build_query($pParams, '', '&');
 		$SecretKey = sha1($this->secret_key);
-		$tSign=hash_hmac('md5',$tPreSign,$SecretKey);
-		$pParams['sign'] = $tSign;
+		$tSign     = hash_hmac('md5',$tPreSign,$SecretKey);
+		$pParams['sign']    = $tSign;
 		$pParams['reqTime'] = time()*1000;
-		$tResult=http_build_query($pParams, '', '&');
+		$tResult            = http_build_query($pParams, '', '&');
 		return $tResult;
 	}
     
-	//下单
+	//委托下单
 	function  Trade($Price,$Amount,$type){				  
 		$parameters=array(
 			'access_key' => $access_key,
@@ -47,7 +47,7 @@ class wkjAPI {
 		$res =$this->httpRequest($url,$post);
 		return $res;
 	}
-	//取消订单
+	//取消委托
 	function Cancel($OrderID){
 		$parameters=array(
 			'access_key' => $access_key,
@@ -68,7 +68,7 @@ class wkjAPI {
 			'market'     => 'wkb_cny',
 			'price'      => $Price,
 			'num'        => $Amount,
-			'type'       => 1
+			'type'       => $type
 		);
 		$url='www.wkj.link/order/upOrder';
 		$post=$this->createSign($parameters);
