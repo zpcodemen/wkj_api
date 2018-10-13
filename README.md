@@ -21,9 +21,10 @@
       1015	已经超出了限制次数,60秒后再试
 
 2：接口说明：请求方式为post.返回json数据
-      (1)	委托交易api:
+     
+     (1)	委托交易api:
              url: www.wkj.link/order/upTrade
-       参数说明：
+           参数说明：
             参数名	描述
             access_key	Access_key
             method	当前方法名称(upTrade)
