@@ -109,6 +109,21 @@
           type	        1:buy;2:sell
           addtime	      下单时间
 
+          (5)	查询币种余额
+            url:www.wkj.com/order/getBalance
+              请求参数
+              参数名	       描述
+              access_key	access_key
+              method	    当前方法名称(getBalance)
+              coin	      币种名称
+              sign	      签名(加密方式详情见demo)
+              reqTime	    毫秒时间戳
+              请求结果：
+              Array
+              (
+                  [coin] => cny
+                  [balance] => 773.10289954
+              )
 
     加密方式：
            https://gitee.com/lianlianyi/zb-api/blob/master/%E5%8A%A0%E5%AF%86.md
