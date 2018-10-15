@@ -75,6 +75,19 @@ class wkjAPI {
 		$res=$this->httpRequest($url,$post);
 		return $res;
 	}
+	//订单状态查询接口
+	function getTradeStatus($OrderID,$market){
+		$parameters = array(
+			'access_key' => $access_key,
+			'method'     => 'getTradeStatus',
+			'market'     => $market,
+			'trade_num'  => $OrderID
+		);
+		$url='www.wkj.link/order/getTradeStatus';
+		$post=$this->createSign($parameters);
+		$res =$this->httpRequest($url,$post);
+		return $res;
+	}
 }
 ?>
 <body>
