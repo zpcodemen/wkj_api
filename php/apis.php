@@ -88,6 +88,18 @@ class wkjAPI {
 		$res =$this->httpRequest($url,$post);
 		return $res;
 	}
+	//查询币种余额
+	function getBalance($coin){
+		$parameters = array(
+			'access_key' => $access_key,
+			'method'     => 'getBalance',
+			'coin'        => $coin
+		);
+		$url='www.wkj.link/order/getBalance';
+		$post=$this->createSign($parameters);
+		$res =$this->httpRequest($url,$post);
+		return $res;
+	}
 }
 ?>
 <body>
