@@ -77,6 +77,37 @@
           [code] => 200
           [msg] => ok
       )
+      (4)	订单状态api
+       url: www.wkj.link/order/getTradeStatus
+          参数名	     描述
+          access_key	Access_key
+          method	    当前方法名称(getTradeStatus)
+          market	    市场名称
+          trade_num	  交易订单号
+          sign	      签名(加密方式详情见demo)
+          reqTime	    毫秒时间戳
+          响应数据：
+          Array
+          (
+              [market] => wkb_cny
+              [price] => 2.34800000
+              [trade_number] => 15374330818732Ttnrp1
+              [total] => 28.24734000
+              [trade_amount] => 28.24734000
+              [status] => 1
+              [type] => 1
+              [addtime] => 1537433081
+          )
+          参数名	        描述
+          market	      市场名称
+          price	        价格
+          trade_number	交易订单号
+          total	        下单总量
+          trade_amount	已交易数量
+          status	      1:交易已完成；0:交易未完成
+          type	        1:buy;2:sell
+          addtime	      下单时间
+
 
     加密方式：
            https://gitee.com/lianlianyi/zb-api/blob/master/%E5%8A%A0%E5%AF%86.md
