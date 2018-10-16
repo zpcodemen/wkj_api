@@ -100,6 +100,19 @@ class wkjAPI {
 		$res =$this->httpRequest($url,$post);
 		return $res;
 	}
+	//查询市场订单状态(三天内)
+	function getOrderStatus($market,$status){
+		$parameters = array(
+			'access_key' => $access_key,
+			'method'     => 'getOrderStatus',
+			'market'     => $market,
+			'status'     => $status            //订单状态
+		);
+		$url='www.wkj.link/order/getOrderStatus';
+		$post=$this->createSign($parameters);
+		$res =$this->httpRequest($url,$post);
+		return $res;
+	}
 }
 ?>
 <body>
