@@ -124,6 +124,41 @@
                   [coin] => cny
                   [balance] => 773.10289954
               )
+         (6)	查询市场的所有挂单（三天内）
+            url:www.wkj.com/order/getOrderStatus 
+            请求参数
+            参数名	        描述
+            access_key	  access_key
+            method	      当前方法名称(getOrderStatus)
+            market	      市场名称
+            status	      订单状态(0:未完成;1:已完成；2返回全部)
+            sign	        签名(加密方式详情见demo)
+            reqTime	      毫秒时间戳
+            请求结果：
+            Array
+            (
+                [code] => 200
+                [msg] => Array
+                    (
+                        [0] => Array
+                            (
+                                [trade_num] => 15389983989713kKAPNe
+                                [type] => 1
+                                [status] => 0
+                            )
+                        [1] => Array
+                            (
+                                [trade_num] => 1539692492768u1m5UT1
+                                [type] => 2
+                                [status] => 0
+                            )
+                    )
+            )
+            参数名	    描述
+            trade_num	交易订单号
+            method	  当前方法名称(getOrderStatus)
+            status	  订单状态(0:未完成;1:已完成)
+     
 
     加密方式：
            https://gitee.com/lianlianyi/zb-api/blob/master/%E5%8A%A0%E5%AF%86.md
