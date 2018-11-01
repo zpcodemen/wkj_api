@@ -158,7 +158,9 @@
             trade_num	交易订单号
             method	  当前方法名称(getOrderStatus)
             status	  订单状态(0:未完成;1:已完成)
-     
+        (7):查询所有市场名称：
+		    www.wkj.link/api/getMarketList
+            		
 
     加密方式：
            https://gitee.com/lianlianyi/zb-api/blob/master/%E5%8A%A0%E5%AF%86.md
