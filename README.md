@@ -83,7 +83,7 @@
           参数名	     描述
           access_key	Access_key
           method	    当前方法名称(getTradeStatus)
-          market	    市场名称
+          market	    市场名称(如:wkb_bitcny)
           trade_num	  交易订单号
           sign	      签名(加密方式详情见demo)
           reqTime	    毫秒时间戳
@@ -110,13 +110,13 @@
           addtime	      下单时间
 
           (5)	查询币种余额
-            url:www.wkj.com/order/getBalance
+            url:www.wkj.link/order/getBalance
               请求参数
               参数名	       描述
               access_key	access_key
               method	    当前方法名称(getBalance)
-              coin	      币种名称
-              sign	      签名(加密方式详情见demo)
+              coin	        币种名称(如:wkb)
+              sign	        签名(加密方式详情见demo)
               reqTime	    毫秒时间戳
               请求结果：
               Array
@@ -125,14 +125,14 @@
                   [balance] => 773.10289954
               )
          (6)	查询市场的所有挂单（三天内）
-            url:www.wkj.com/order/getOrderStatus 
+            url:www.wkj.link/order/getOrderStatus 
             请求参数
             参数名	        描述
             access_key	  access_key
             method	      当前方法名称(getOrderStatus)
             market	      市场名称
             status	      订单状态(0:未完成;1:已完成；2返回全部)
-            sign	        签名(加密方式详情见demo)
+            sign	      签名(加密方式详情见demo)
             reqTime	      毫秒时间戳
             请求结果：
             Array
