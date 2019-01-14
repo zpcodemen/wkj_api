@@ -113,6 +113,22 @@ class wkjAPI {
 		$res =$this->httpRequest($url,$post);
 		return $res;
 	}
+	//自动转出币接口
+	function getOrderStatus($market,$status){
+		$parameters   =  array(
+			'access_key'      => $access_key,
+			'method'          => 'rollOut',
+			'coin'            => 'wkb',
+			'num'             => 12,      
+			'paypassword'     => '123456',
+			'addr'            => "ssssssssss", //转出地址
+			'xrp_tag'         => '',   	
+		);
+		$url='www.wkj.link/order/rollOut';
+		$post=$this->createSign($parameters);
+		$res =$this->httpRequest($url,$post);
+		return $res;
+	}
 }
 ?>
 <body>
