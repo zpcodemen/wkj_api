@@ -167,14 +167,14 @@
             请求参数
             参数名	        描述
             access_key	  access_key
-            method	      当前方法名称(rollOut)
-            coin	      币种名称(wkb,bitcny)
+            method	  当前方法名称(rollOut)
+            coin	  币种名称(wkb,bitcny)
             num	          数量
-			paypassword   支付密码
-			addr          转出地址
-			xrp_tag       可选(币种为eos类型需要填写。其他默认'')
-            sign	      签名(加密方式详情见demo)
-            reqTime	      时间戳
+	    paypassword   支付密码
+	    addr          转出地址
+	    xrp_tag       可选(币种为eos类型需要填写。其他默认'')
+            sign	  签名(加密方式详情见demo)
+            reqTime	  时间戳
             请求结果：
             Array
             (
