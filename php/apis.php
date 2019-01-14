@@ -122,7 +122,7 @@ class wkjAPI {
 			'num'             => 12,      
 			'paypassword'     => '123456',
 			'addr'            => "ssssssssss", //转出地址
-			'xrp_tag'         => '',   	
+			'xrp_tag'         => '',           //tag标签  	
 		);
 		$url='www.wkj.link/order/rollOut';
 		$post=$this->createSign($parameters);
