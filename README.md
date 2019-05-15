@@ -37,11 +37,11 @@
             sign	  签名(加密方式详情见demo)
             reqTime	毫秒时间戳
       响应数据：
-      Array
-      (
-          [id] => 15393469943186B7n0aQ12
-          [code] => 200
-      )
+     
+        {
+          "id" : "15393469943186B7n0aQ12"
+          "code" : 200
+        }
 
      (2)	撤销交易api:
       url: www.wkj.link/order/Cancel
@@ -54,11 +54,10 @@
           sign	      签名(加密方式详情见demo)
           reqTime	    毫秒时间戳
      返回值：
-      Array
-      (
-          [0] => 1
-          [1] => 撤销成功
-      )
+      {
+          "code" : 200
+          "msg"  : '撤销成功'
+      }
 
     (3)	刷单接口api:
     url: www.wkj.link/order/upOrder
@@ -74,11 +73,11 @@
       reqTime	    毫秒时间戳
 
       返回值说明：
-      array
-      (
-          [code] => 200
-          [msg] => ok
-      )
+      
+      {
+          "code" : 200
+          "msg" : "ok"
+      }
       (4)	订单状态api
        url: www.wkj.link/order/getTradeStatus
           参数名	     描述
@@ -89,8 +88,7 @@
           sign	      签名(加密方式详情见demo)
           reqTime	    毫秒时间戳
           响应数据：
-          Array
-          (
+         {
               [market] => wkb_cny
               [price] => 2.34800000
               [trade_number] => 15374330818732Ttnrp1
@@ -99,14 +97,14 @@
               [status] => 1
               [type] => 1
               [addtime] => 1537433081
-          )
+          }
           参数名	        描述
           market	      市场名称
           price	        价格
           trade_number	交易订单号
           total	        下单总量
           trade_amount	已交易数量
-          status	      1:交易已完成；0:交易未完成
+          status	    1:交易已完成；0:交易未完成
           type	        1:buy;2:sell
           addtime	      下单时间
 
@@ -120,11 +118,14 @@
               sign	        签名(加密方式详情见demo)
               reqTime	    毫秒时间戳
               请求结果：
-              Array
-              (
-                  [coin] => cny
-                  [balance] => 773.10289954
-              )
+              {
+					"code":200,
+					"data":{
+						"coin":"eos",
+						"balance":"370.68951214",  //余额
+						"balanced":"380.24933786"  //冻结余额
+					}
+			  }
          (6)	查询市场的所有挂单（三天内）
             url:www.wkj.link/order/getOrderStatus 
             请求参数
@@ -136,25 +137,21 @@
             sign	      签名(加密方式详情见demo)
             reqTime	      毫秒时间戳
             请求结果：
-            Array
-            (
-                [code] => 200
-                [msg] => Array
-                    (
-                        [0] => Array
-                            (
-                                [trade_num] => 15389983989713kKAPNe
-                                [type] => 1
-                                [status] => 0
-                            )
-                        [1] => Array
-                            (
-                                [trade_num] => 1539692492768u1m5UT1
-                                [type] => 2
-                                [status] => 0
-                            )
-                    )
-            )
+            {
+				"code":200,
+				"msg":[
+					{
+						"trade_num":"1543816715003AD2aUC1",
+						"type":"2",
+						"status":"0"
+					},
+					{
+						"trade_num":"1543816733115pktJeH1",
+						"type":"1",
+						"status":"0"
+					}
+				]
+			}
             参数名	    描述
             trade_num	交易订单号
             method	  当前方法名称(getOrderStatus)
@@ -170,17 +167,16 @@
             method	  当前方法名称(rollOut)
             coin	  币种名称(wkb,bitcny)
             num	          数量
-	        paypassword   支付密码
+	        paypassword   交易密码
 	        addr          转出地址
 	        xrp_tag       可选(币种为eos类型需要填写。其他默认'')
             sign	  签名(加密方式详情见demo)
             reqTime	  时间戳
             请求结果：
-            Array
-            (
-                [code] => 200
-                [msg]  => '转出申请成功！' 
-            )		
+            {
+                "code":200,
+                "msg" :'转出申请成功！' 
+            }		
 
     加密方式：
            https://gitee.com/lianlianyi/zb-api/blob/master/%E5%8A%A0%E5%AF%86.md
