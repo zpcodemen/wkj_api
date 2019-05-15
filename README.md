@@ -119,12 +119,9 @@
               reqTime	    毫秒时间戳
               请求结果：
               {
-					"code":200,
-					"data":{
-						"coin":"eos",
-						"balance":"370.68951214",  //余额
-						"balanced":"380.24933786"  //冻结余额
-					}
+				"coin":"eos",
+				"balance":"370.68951214",  //余额
+				"balanced":"380.24933786"  //冻结余额
 			  }
          (6)	查询市场的所有挂单（三天内）
             url:www.wkj.link/order/getOrderStatus 
