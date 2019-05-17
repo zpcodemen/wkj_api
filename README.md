@@ -143,7 +143,8 @@
 						"trade_amount":"0.00000000",
 						"trade_num":"1543816715003AD2aUC1",
 						"type":"2",
-						"status":"0"
+						"status":"0",
+						"addtime":""
 					},
 					{
 						"price":"1.81000000",
@@ -151,7 +152,8 @@
 						"trade_amount":"0.20000000",
 						"trade_num":"1543816733115pktJeH1",
 						"type":"1",
-						"status":"0"
+						"status":"0",
+						"addtime":""
 					}
 				]
 			}
@@ -159,10 +161,10 @@
 			price	        价格
 			total	        下单总量
             trade_amount	已交易数量
-            trade_num	 交易订单号
-            type	   交易类型(1:买;2:卖)
-            status	   订单状态(0:未完成;1:已完成)
-			
+            trade_num	    交易订单号
+            type	        交易类型(1:买;2:卖)
+            status	        订单状态(0:未完成;1:已完成)
+			addtime         订单创建时间
         (7):查询所有市场名称：
 		    www.wkj.link/api/getMarketList
         (8):币自动转出
