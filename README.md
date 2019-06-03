@@ -21,6 +21,7 @@
       1015	已经超出了限制次数,60秒后再试
       1016  data error
 	  1017  参数错误
+	  1018  data is null
 
 2：接口说明：请求方式为post.返回json数据
      
@@ -185,7 +186,26 @@
                 "code":200,
                 "msg" :'转出申请成功！' 
             }		
-
+        (9):批量撤销挂单(默认一个市场一次请求撤销20单)
+		    url:www.wkj.link/order/cancelAll
+            请求参数
+            参数名	        描述
+            access_key	  access_key
+            method	  当前方法名称(cancelAll)
+            market	  市场名称(wkb_bitcny)
+			sign	  签名(加密方式详情见demo)
+            reqTime	  时间戳
+			请求结果:
+			{
+				"code":200,
+				"msg":"success"
+			}
+		    如果没有需要撤销的挂单
+			{
+				"msg":"data is null",
+				"code":1018
+			}
+		
     加密方式：
            https://gitee.com/lianlianyi/zb-api/blob/master/%E5%8A%A0%E5%AF%86.md
   3：demo 地址：
