@@ -105,9 +105,9 @@
           trade_number	交易订单号
           total	        下单总量
           trade_amount	已交易数量
-          status	    1:交易已完成；0:交易未完成
+          status	1:交易已完成；0:交易未完成
           type	        1:buy;2:sell
-          addtime	      下单时间
+          addtime	下单时间
 
           (5)	查询币种余额
             url:www.wkj.link/order/getBalance
@@ -123,7 +123,7 @@
 				"coin":"eos",
 				"balance":"370.68951214",  //余额
 				"balanced":"380.24933786"  //冻结余额
-			  }
+	      }
          (6)	查询市场的所有挂单（三天内）
             url:www.wkj.link/order/getOrderStatus 
             请求参数
@@ -159,13 +159,13 @@
 				]
 			}
             参数名	    描述
-			price	        价格
-			total	        下单总量
+	    price	        价格
+	    total	        下单总量
             trade_amount	已交易数量
-            trade_num	    交易订单号
+            trade_num	        交易订单号
             type	        交易类型(1:买;2:卖)
             status	        订单状态(0:未完成;1:已完成)
-			addtime         订单创建时间
+	    addtime             订单创建时间
         (7):查询所有市场名称：
 		    www.wkj.link/api/getMarketList
         (8):币自动转出
