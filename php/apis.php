@@ -129,6 +129,19 @@ class wkjAPI {
 		$res =$this->httpRequest($url,$post);
 		return $res;
 	}
+	//批量撤销挂单
+	function cancelAll($host,$access_key,$secret_key){
+		$url_cancle      = 'www.wkj.link/order/cancelAll';
+		$param_cancel    = array(
+			'access_key' => $access_key,
+			'method'     => 'cancelAll',
+			'market'     => 'wkb_bitcny',
+			'type'       => 1
+		);
+		$arr_api   = createSign($param_cancel,$secret_key);
+		$data      = postCurl($url_cancle,$arr_api);
+		return $data;
+    }
 }
 ?>
 <body>
