@@ -193,6 +193,7 @@
             access_key	  access_key
             method	  当前方法名称(cancelAll)
             market	  市场名称(wkb_bitcny)
+			type      挂单类型(1:买单;2:卖单)
 			sign	  签名(加密方式详情见demo)
             reqTime	  时间戳
 			请求结果:
