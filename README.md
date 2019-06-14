@@ -124,14 +124,14 @@
 				"balance":"370.68951214",  //余额
 				"balanced":"380.24933786"  //冻结余额
 	      }
-         (6)	查询市场的所有挂单（三天内）
+         (6)查询市场的所有挂单（三天内）
             url:www.wkj.link/order/getOrderStatus 
             请求参数
             参数名	        描述
             access_key	  access_key
             method	      当前方法名称(getOrderStatus)
             market	      市场名称
-            status	      订单状态(0:未完成;1:已完成；2返回全部)
+            status	      订单状态(0:未完成;1:已完成;2已撤销;3:返回全部)
             sign	      签名(加密方式详情见demo)
             reqTime	      毫秒时间戳
             请求结果：
@@ -166,9 +166,61 @@
             type	        交易类型(1:买;2:卖)
             status	        订单状态(0:未完成;1:已完成)
 	    addtime             订单创建时间
-        (7):查询所有市场名称：
+		(7)分页获取市场的所有挂单（三天内）
+            url:www.wkj.link/order/getOrderStatusByPage 
+            请求参数
+            参数名	        描述
+            access_key	  access_key
+            method	      当前方法名称(getOrderStatusByPage)
+            market	      市场名称
+            status	      订单状态(0:未完成;1:已完成;2:已撤销;3:返回全部)
+			page          页码(可选,默认为1)
+			limit         单页返回条数(可选:默认为50,最大100)
+            sign	      签名(加密方式详情见demo)
+            reqTime	      毫秒时间戳
+            请求结果：
+            {
+				"code": 200,
+				"data": {
+					"page": "1",
+					"total": "78",
+					"pages": 39,
+					"msg": [
+						{
+							"price": "0.82000000",
+							"total": "0.01000000",
+							"trade_amount": "0.00000000",
+							"trade_num": "1560416577189tZ2eW91",
+							"type": "2",
+							"status": "0",
+							"addtime": "1560416577"
+						},
+						{
+							"price": "0.82000000",
+							"total": "0.01000000",
+							"trade_amount": "0.00000000",
+							"trade_num": "1560416576255uazLDo1",
+							"type": "2",
+							"status": "0",
+							"addtime": "1560416576"
+						}
+					]
+				}
+			}
+            参数名	    描述
+			page            当前页码
+			total           数据总条数
+			pages           总页数
+	        price	        价格
+	        total	        下单总量
+            trade_amount	已交易数量
+            trade_num	        交易订单号
+            type	        交易类型(1:买;2:卖)
+            status	        订单状态(0:未完成;1:已完成)
+	        addtime             订单创建时间
+        (8):查询所有市场名称：
 		    www.wkj.link/api/getMarketList
-        (8):币自动转出
+        (9):币自动转出
             url:www.wkj.link/order/rollOut 
             请求参数
             参数名	        描述
@@ -186,7 +238,7 @@
                 "code":200,
                 "msg" :'转出申请成功！' 
             }		
-        (9):批量撤销挂单(默认一个市场一次请求撤销20单)
+        (10):批量撤销挂单(默认一个市场一次请求撤销20单)
 		    url:www.wkj.link/order/cancelAll
             请求参数
             参数名	        描述

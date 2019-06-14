@@ -114,7 +114,7 @@ class wkjAPI {
 		return $res;
 	}
 	//自动转出币接口
-	function getOrderStatus($market,$status){
+	function rollOut($market,$status){
 		$parameters   =  array(
 			'access_key'      => $access_key,
 			'method'          => 'rollOut',
@@ -125,6 +125,21 @@ class wkjAPI {
 			'xrp_tag'         => '',           //tag标签  	
 		);
 		$url='www.wkj.link/order/rollOut';
+		$post=$this->createSign($parameters);
+		$res =$this->httpRequest($url,$post);
+		return $res;
+	}
+	/**分页查询当前状态所有订单*********/
+	function getOrderStatusByPage($market,$status){
+		$parameters   =  array(
+			'access_key' => $access_key,
+			'method'     => 'getOrderStatus',
+			'market'     => $market,
+			'status'     => $status,            //订单状态
+			'page'       => 1 ,                 //默认为1
+            'limit'      => 20                  //默认50			
+		);
+		$url='www.wkj.link/order/getOrderStatusByPage';
 		$post=$this->createSign($parameters);
 		$res =$this->httpRequest($url,$post);
 		return $res;
