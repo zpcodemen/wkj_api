@@ -22,11 +22,11 @@
       1016  data error
 	  1017  参数错误
 	  1018  data is null
-
+    host:app.wkj.link
 2：接口说明：请求方式为post.返回json数据
      
      (1)	委托交易api:
-             url: www.wkj.link/order/upTrade
+             url: app.wkj.link/order/upTrade
       参数说明：
             参数名	描述
             access_key	Access_key
@@ -45,7 +45,7 @@
         }
 
      (2)	撤销交易api:
-      url: www.wkj.link/order/Cancel
+      url: app.wkj.link/order/Cancel
       参数说明：
           参数名	      描述
           access_key	Access_key
@@ -61,7 +61,7 @@
       }
 
     (3)	刷单接口api:
-    url: www.wkj.link/order/upOrder
+    url: app.wkj.link/order/upOrder
 
       参数名	      描述
       access_key	Access_key
@@ -80,7 +80,7 @@
           "msg" : "ok"
       }
       (4)	订单状态api
-       url: www.wkj.link/order/getTradeStatus
+       url: app.wkj.link/order/getTradeStatus
           参数名	     描述
           access_key	Access_key
           method	    当前方法名称(getTradeStatus)
@@ -110,7 +110,7 @@
           addtime	下单时间
 
           (5)	查询币种余额
-            url:www.wkj.link/order/getBalance
+            url:app.wkj.link/order/getBalance
               请求参数
               参数名	       描述
               access_key	access_key
@@ -125,7 +125,7 @@
 				"balanced":"380.24933786"  //冻结余额
 	      }
          (6)查询市场的所有挂单（三天内）
-            url:www.wkj.link/order/getOrderStatus 
+            url:app.wkj.link/order/getOrderStatus 
             请求参数
             参数名	        描述
             access_key	  access_key
@@ -167,7 +167,7 @@
             status	        订单状态(0:未完成;1:已完成)
 	    addtime             订单创建时间
 		(7)分页获取市场的所有挂单（三天内）
-            url:www.wkj.link/order/getOrderStatusByPage 
+            url:app.wkj.link/order/getOrderStatusByPage 
             请求参数
             参数名	        描述
             access_key	  access_key
@@ -219,9 +219,9 @@
             status	        订单状态(0:未完成;1:已完成)
 	        addtime             订单创建时间
         (8):查询所有市场名称：
-		    www.wkj.link/api/getMarketList
+		    app.wkj.link/api/getMarketList
         (9):币自动转出
-            url:www.wkj.link/order/rollOut 
+            url:app.wkj.link/order/rollOut 
             请求参数
             参数名	        描述
             access_key	  access_key
@@ -239,7 +239,7 @@
                 "msg" :'转出申请成功！' 
             }		
         (10):批量撤销挂单(默认一个市场一次请求撤销20单)
-		    url:www.wkj.link/order/cancelAll
+		    url:app.wkj.link/order/cancelAll
             请求参数
             参数名	        描述
             access_key	  access_key
