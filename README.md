@@ -231,6 +231,7 @@
 	        paypassword   交易密码
 	        addr          转出地址
 	        xrp_tag       可选(币种为eos类型需要填写。其他默认'')
+			chain_type    可选(USDT提币可选:ERC20,USDT至TRX时须设置此参数为TRC20)默认ERC20其他币种提币无须设置此参数
             sign	  签名(加密方式详情见demo)
             reqTime	  时间戳
             请求结果：
