@@ -21,7 +21,7 @@
       1015	已经超出了限制次数,60秒后再试
       1016  data error
 	  1017  参数错误
-	  1018  data is null
+	  1018  data is null  
     host:app.wkj.link
 2：接口说明：请求方式为post.返回json数据
      
